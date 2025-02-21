@@ -57,6 +57,12 @@ ipch/
 *.vsp
 *.vspx
 
+# VS Code
+.vscode/
+
+# Mono (???)
+.mono/
+
 # Guidance Automation Toolkit
 *.gpState
 
