@@ -53,17 +53,10 @@ namespace swag.Tests
         {
             //When
             var inventoryPage = new InventoryPage(driver);
-            foreach (var itemName in itemNames)
-            {
-                inventoryPage.AddItemToCart(itemName);
-            }
+            itemNames.ToList().ForEach(i => inventoryPage.AddItemToCart(i));
             //Then
             var cartPage = inventoryPage.GoToCart();
-            foreach (var itemName in itemNames)
-            {
-                cartPage.IsItemInCart(itemName)
-                    .Should().BeTrue();
-            }
+            itemNames.ToList().ForEach(i => cartPage.IsItemInCart(i));
         }
 
         [DataRow("Sauce Labs Bike Light", "Test.allTheThings() T-Shirt (Red)", "Sauce Labs Onesie")]
