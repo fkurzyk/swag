@@ -8,6 +8,6 @@
         </Parallelize>
     </MSTest>
 	<TestRunParameters>
-		<Parameter name="browser" value="Chrome" />
+		<Parameter name="browser" value="Firefox" />
 	</TestRunParameters>
 </RunSettings>
