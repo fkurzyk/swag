@@ -60,9 +60,13 @@ namespace swag.Tests
             switch (browser)
             {
                 case BrowserType.Chrome:
-                    return new ChromeDriver(new ChromeOptions());
+                    var chromeOptions = new ChromeOptions();
+                    chromeOptions.AddArgument("--headless=new");
+                    return new ChromeDriver(chromeOptions);
                 case BrowserType.Firefox:
-                    return new FirefoxDriver(new FirefoxOptions());
+                    var firefoxOptions = new FirefoxOptions();
+                    firefoxOptions.AddArgument("--headless");
+                    return new FirefoxDriver(firefoxOptions);
                 case BrowserType.Edge:
                     return new EdgeDriver(new EdgeOptions());
                 default:
